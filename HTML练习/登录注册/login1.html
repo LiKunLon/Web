@@ -1,0 +1,37 @@
+<html>
+    <meta charset="utf-8">
+    <title>登录</title>
+<script>
+    function MCK(type) {
+        var inputusername=document.getElementById("username");
+        var inputpassword=document.getElementById("password");
+        if(type==1){
+            if(inputusername.value==""){
+                alert("账号没输入呢!");
+                return false;
+            }
+            if(inputpassword.value==""){
+                alert("密码没输入呢!~");
+                return false;
+            }
+            alert("登陆成功!!!");
+        }else if(type==2){
+            if(confirm("确认取消登录并清空?")){
+                inputusername.value="";
+                inputpassword.value="";
+            }
+        }
+    }
+</script>
+<body>
+<span style="font-size: 50px;margin-left: 900px">登录</span>
+<div style="margin-left: 850px">
+账号:<input id="username" type="text"><p></p>
+密码:<input id="password" type="text"><p></p>
+</div>
+<div style="margin-left: 900px">
+    <input type="button" value="登录" onclick="MCK(1)">
+    <input type="button" value="取消" onclick="MCK(2)">
+</div>
+</body>
+</html>

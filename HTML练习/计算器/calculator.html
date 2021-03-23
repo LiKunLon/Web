@@ -1,0 +1,73 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>计算器</title>
+<script src="jquery-1.9.1.min.js"></script>
+    <script>
+        function MCK(number) {
+           var inputnum1 = jQuery("#num1");
+           var inputnum2 = jQuery("#num2");
+            //清空
+
+            if(inputnum1.val()==""){
+                alert("第一个数字没输入呢!");
+                return false;
+            }
+            if(inputnum2.val()==""){
+                alert("第二个数字没输入呢!");
+                return false;
+            }
+            var total=0;
+            //加
+            if(number==1){
+                total=parseInt(inputnum1.val())+parseInt(inputnum2.val());
+            }
+            //减
+            else if(number==2){
+                total=parseInt(inputnum1.val())-parseInt(inputnum2.val());
+            }
+            //乘
+            else if(number==3){
+                total=parseInt(inputnum1.val())*parseInt(inputnum2.val());
+            }
+            //除
+            else if(number==4){
+                total=parseInt(inputnum1.val())/parseInt(inputnum2.val());
+            }
+            jQuery("#result").html( "<h1>计算结果:<strong style='color: deeppink'>"+total+"</strong></h1>");
+            if(number==5){
+                if(confirm("确定清空吗?")){
+                    inputnum1.val("");
+                    inputnum2.val("");
+                    jQuery("#result").html("");
+                }
+                return false;
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div style="text-align: center">
+<h1>计算器</h1>
+<!--输入框-->
+<div>
+第一个数字:<input id="num1" type="number" ><p></p>
+第二个数字:<input id="num2" type="number"><p></p>
+</div>
+<!--按钮-->
+<div>
+    <input  type="button" value="相加" style="color: red;font-size: 20px" onclick="MCK(1)">
+    <input  type="button" value="相减"style="color: purple;font-size: 20px" onclick="MCK(2)">
+    <input  type="button" value="相乘"style="color: green;font-size: 20px" onclick="MCK(3)">
+    <input  type="button" value="相除"style="color: yellow;font-size: 20px" onclick="MCK(4)">
+    <input  type="button" value="清空"style="color: blue;font-size: 20px" onclick="MCK(5)">
+
+    <!--结果显示-->
+    <div id="result" style="font-size: 20px">
+
+    </div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>简易计算器</title>
+    <script>
+        function MCK(type) {
+            var inputnum1=document.getElementById("num1");
+            var inputnum2=document.getElementById("num2");
+            if(inputnum1.value==""){
+                alert("数字1没输入");
+                return false;
+            }
+            if(inputnum2.value==""){
+                alert("数字2没输入");
+                return false;
+            }
+            //加
+            if(type==1){
+
+                var total=parseInt(inputnum1.value)+parseInt(inputnum2.value);
+                document.getElementById("result").innerHTML="<h1>计算结果:<strong style='color: red'>"+total+"</strong></h1>"
+            }
+            //减
+            if(type==2){
+
+                var total=parseInt(inputnum1.value)-parseInt(inputnum2.value);
+                document.getElementById("result").innerHTML="<h1>计算结果:<strong style='color: red'>"+total+"</strong></h1>"
+            }
+            //乘
+            if(type==3){
+                var total=parseInt(inputnum1.value)*parseInt(inputnum2.value);
+                document.getElementById("result").innerHTML="<h1>计算结果为:<strong style='color: red'>"+total+"</strong></h1>"
+            }
+            //除
+            if(type==4){
+                var total=parseInt(inputnum1.value)/parseInt(inputnum2.value);
+                document.getElementById("result").innerHTML="<h1>计算结果为:<strong style='color: red'>"+total+"</strong></h1>"
+            }
+            if(type==5){
+                if(confirm("确认清空吗?")){
+                    inputnum1.value="";
+                    inputnum2.value="";
+                    document.getElementById("result").innerHTML="";
+                }
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+<div style="text-align: center">
+    <div style="margin-top: 100px">
+    <h1>计算器</h1>
+<!-- 输入框   -->
+        数字1:<input id="num1" type="number"><p></p>
+        数字2:<input id="num2" type="number"><p></p>
+    </div>
+<!--  按钮-->
+    <div>
+    <input type="button" value="加" onclick="MCK(1)">
+    <input type="button" value="减" onclick="MCK(2)">
+    <input type="button" value="乘" onclick="MCK(3)">
+    <input type="button" value="除" onclick="MCK(4)">
+    <input type="button" value="清" onclick="MCK(5)">
+    </div>
+<!--    结果显示-->
+    <div id="result" style="margin-top: 50px">
+    </div>
+
+</div>
+
+</body>
+</html>

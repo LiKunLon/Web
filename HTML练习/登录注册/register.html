@@ -1,0 +1,49 @@
+<html>
+<meta charset="utf-8">
+<title>注册</title>
+<body>
+<h1 style="font-size: 50px;margin-left: 900px">注册
+<script>
+    function MCK(type) {
+        var inputusername=document.getElementById("username");
+        var inputpassword=document.getElementById("password");
+        var inputconfirmPwd=document.getElementById("confirmPwd");
+        if(type==1){
+            if(inputusername.value==""){
+                alert("用户名没输呢!");
+                return false;
+            }
+            if(inputpassword.value==""){
+                alert("密码没设置呢!");
+                return false;
+            }
+            if(inputconfirmPwd.value==""){
+                alert("密码没确认呢!");
+                return false;
+            }
+            if(inputpassword.value!=inputconfirmPwd.value){
+                alert("两次密码不一样!")
+                return false;
+            }
+            alert("提交成功了!");
+        }else if(type==2){
+            if(confirm("是否确认清空?")){
+                inputusername.value="";
+                inputpassword.value="";
+                inputconfirmPwd.value="";
+            }
+        }
+    }
+</script>
+</h1>
+<div style="margin-left: 850px">
+账&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp号:<input id="username" type="text"><p></p>
+密&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp码:<input id="password" type="text"><p></p>
+确认密码:<input id="confirmPwd" type="text"><p></p>
+</div>
+<div style="margin-left: 900px">
+    <input type="button" value="提交" onclick="MCK(1)">
+    <input type="button" value="清空"onclick="MCK(2)">
+</div>
+</body>
+</html>

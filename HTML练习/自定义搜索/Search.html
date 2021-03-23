@@ -1,0 +1,30 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>自定义搜索</title>
+<script src="jquery-1.9.1.min.js"></script>
+    <script>
+
+        function MCK(num) {
+            var ifr=jQuery("#ifr");
+            if(num==1){
+                ifr.attr("src","http://www.baidu.com");
+            }
+            if(num==2){
+                ifr.attr("src","https://cn.bing.com/");
+            }
+            if(num==3){
+                ifr.attr("src","http://www.so.com");
+            }
+        }
+    </script>
+</head>
+<body>
+<input id="baidu" type="button" value="百度" onclick="MCK(1)">
+<input id="sougou" type="button" value="必应" onclick="MCK(2)">
+<input id="sou" type="button" value="360" onclick="MCK(3)">
+<div>
+    <iframe id="ifr" style="width:100%;height: 900px" src=""></iframe>
+</div>
+</body>
+</html>
